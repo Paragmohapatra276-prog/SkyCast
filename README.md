@@ -28,6 +28,10 @@ SkyCast is a modern responsive weather dashboard that provides real-time weather
 
 ![City Weather View](screenshots/city.png)
 
+### Weather Details Panel
+
+![Weather Details](screenshots/extra.png)
+
 ## Author
 
 Parag Mohapatra
