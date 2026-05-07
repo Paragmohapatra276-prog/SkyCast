@@ -35,6 +35,7 @@ SkyCast is a modern responsive weather dashboard that provides real-time weather
 ## Author
 
 Parag Mohapatra
+
 ## Live Demo
 
-https://your-link.vercel.app
+https://sky-cast-bau2j7pao-paragmohapatra276-progs-projects.vercel.app
