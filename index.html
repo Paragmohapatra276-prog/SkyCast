@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Atmospheric Background -->
+    <div id="weather-bg" class="weather-bg">
+        <div id="bg-animation" class="bg-animation"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-wrapper">
+
+        <!-- Search Bar -->
+        <header class="search-header">
+            <div class="search-container glass-soft">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+            </div>
+            <div id="error-message" class="error-toast hidden">
+                <i class="fa-solid fa-circle-exclamation"></i> City not found
+            </div>
+        </header>
+
+        <!-- Loading View -->
+        <div id="loading" class="loading-view">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Weather Content -->
+        <main id="weather-content" class="weather-content hidden">
+
+            <!-- Hero / Current Weather -->
+            <section class="hero-section">
+                <h1 id="city-name" class="city-title">Delhi</h1>
+                <div class="temp-huge"><span id="temperature">28</span>°</div>
+                <h2 id="weather-condition" class="condition-subtitle">Partly Cloudy</h2>
+                <div class="hero-extras">
+                    <span id="local-time">10:30 AM</span>
+                </div>
+            </section>
+
+            <!-- 5-Day / Hourly Forecast -->
+            <section class="forecast-section glass-soft">
+                <div class="section-header">
+                    <i class="fa-regular fa-calendar-days"></i> <span>5-DAY FORECAST</span>
+                </div>
+                <div id="forecast-container" class="forecast-scroller">
+                    <!-- Forecast items injected by JS -->
+                </div>
+            </section>
+
+            <!-- Detailed Metrics Grid -->
+            <section class="metrics-grid">
+
+                <!-- Feels Like -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-solid fa-temperature-half"></i> <span>FEELS LIKE</span>
+                    </div>
+                    <div class="metric-value"><span id="feels-like">30</span>°</div>
+                </div>
+
+                <!-- Wind -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-solid fa-wind"></i> <span>WIND</span>
+                    </div>
+                    <div class="metric-value"><span id="wind-speed">12</span> <span class="unit">km/h</span></div>
+                </div>
+
+                <!-- Humidity -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-solid fa-droplet"></i> <span>HUMIDITY</span>
+                    </div>
+                    <div class="metric-value"><span id="humidity">65</span>%</div>
+                </div>
+
+                <!-- Sunrise & Sunset -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-solid fa-sun"></i> <span>SUNRISE & SUNSET</span>
+                    </div>
+                    <div class="metric-value sun-times">
+                        <div class="sun-row">
+                            <span class="sun-label">Sunrise</span>
+                            <span id="sunrise" class="sun-time">06:00 AM</span>
+                        </div>
+                        <div class="sun-row">
+                            <span class="sun-label">Sunset</span>
+                            <span id="sunset" class="sun-time">06:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visibility -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-regular fa-eye"></i> <span>VISIBILITY</span>
+                    </div>
+                    <div class="metric-value"><span id="visibility">10</span> <span class="unit">km</span></div>
+                </div>
+
+                <!-- Pressure -->
+                <div class="metric-card glass-soft">
+                    <div class="metric-header">
+                        <i class="fa-solid fa-gauge"></i> <span>PRESSURE</span>
+                    </div>
+                    <div class="metric-value"><span id="pressure">1012</span> <span class="unit">hPa</span></div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
